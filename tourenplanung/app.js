@@ -1,7 +1,17 @@
 // === Configuration ===
-const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? 'http://localhost:8086'
-    : 'https://moltbot.openclaw.net:8086'; // Change this to your actual server URL
+// API-Server läuft auf dem Moltbot-Server Port 8086
+// Für lokale Entwicklung: http://localhost:8086
+// Für Produktion über SSH-Tunnel oder VPN: Anpassen
+const API_BASE = (() => {
+    const host = window.location.hostname;
+    if (host === 'localhost' || host === '127.0.0.1') {
+        return 'http://localhost:8086';
+    }
+    // GitHub Pages - Backend nicht direkt erreichbar, Demo-Modus
+    // Für echten Betrieb: API_BASE manuell auf Server-Adresse setzen
+    // z.B. 'http://DEIN-SERVER-IP:8086' oder über Reverse Proxy
+    return 'http://localhost:8086'; // Wird Demo-Daten anzeigen wenn nicht erreichbar
+})();
 
 let refreshTimer = null;
 let currentAppointments = [];
