@@ -171,21 +171,22 @@ async function refreshStatus() {
 }
 
 function showDemoData() {
-    // Show demo data for UI preview
+    // Show demo data for UI preview (echte Techniker-Namen!)
     const demoAppointments = [
-        { id: 1, technician: 'Marcel Kowald', customer: 'Müller GmbH', date: '2024-02-05', time: '09:00', status: 'confirmed' },
-        { id: 2, technician: 'Marcel Kowald', customer: 'Schmidt AG', date: '2024-02-05', time: '11:00', status: 'pending' },
-        { id: 3, technician: 'Marcel Kowald', customer: 'Weber & Co', date: '2024-02-05', time: '14:00', status: 'pending' },
-        { id: 4, technician: 'Steffen Weiß', customer: 'Fischer KG', date: '2024-02-06', time: '09:00', status: 'rejected' },
-        { id: 5, technician: 'Steffen Weiß', customer: 'Bauer Ltd', date: '2024-02-06', time: '11:00', status: 'confirmed' },
+        { id: 1, technician: 'Anton Lay', customer: 'P.H.G. GmbH / BEACHCLUB COLOGNE', date: '2026-02-03', time: '08:30', status: 'confirmed' },
+        { id: 2, technician: 'Anton Lay', customer: 'Vonovia Engineering GmbH', date: '2026-02-03', time: '13:00', status: 'pending' },
+        { id: 3, technician: 'Julian Gottwald', customer: 'Autohaus Schmidt', date: '2026-02-03', time: '09:00', status: 'pending' },
+        { id: 4, technician: 'Mehmet Hattatuglu', customer: 'Stadtwerke Frankfurt', date: '2026-02-04', time: '09:00', status: 'confirmed' },
+        { id: 5, technician: 'Jason Heidrich', customer: 'Klinikum Erfurt', date: '2026-02-04', time: '10:00', status: 'pending' },
+        { id: 6, technician: 'Stefan Höfer', customer: 'Industriepark Siegen', date: '2026-02-05', time: '08:00', status: 'pending' },
     ];
     
     currentAppointments = demoAppointments;
     
-    document.getElementById('statPending').textContent = '2';
+    document.getElementById('statPending').textContent = '4';
     document.getElementById('statConfirmed').textContent = '2';
-    document.getElementById('statRejected').textContent = '1';
-    document.getElementById('statTotal').textContent = '5';
+    document.getElementById('statRejected').textContent = '0';
+    document.getElementById('statTotal').textContent = '6';
     
     updateAppointmentsTable(demoAppointments);
     updateTechnicianFilter(demoAppointments);
