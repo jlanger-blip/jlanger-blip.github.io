@@ -7,10 +7,8 @@ const API_BASE = (() => {
     if (host === 'localhost' || host === '127.0.0.1') {
         return 'http://localhost:8086';
     }
-    // GitHub Pages - Backend nicht direkt erreichbar, Demo-Modus
-    // Für echten Betrieb: API_BASE manuell auf Server-Adresse setzen
-    // z.B. 'http://DEIN-SERVER-IP:8086' oder über Reverse Proxy
-    return 'http://localhost:8086'; // Wird Demo-Daten anzeigen wenn nicht erreichbar
+    // Produktion: Moltbot Server
+    return 'http://89.167.23.45:8086';
 })();
 
 let refreshTimer = null;
